@@ -32,15 +32,12 @@
             myArray.push(data)
 
         });
-
-        
-
         var chart = Highcharts.chart('container', {
                 chart: {
                     type: 'bar'
                 },
                 title: {
-                    text: 'Data produk per harga'
+                    text: 'Data produk per stok'
                 },
                 plotOptions: {
                     series: {

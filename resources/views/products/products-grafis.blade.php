@@ -32,9 +32,6 @@
             myArray.push(data)
 
         });
-
-        
-
         var chart = Highcharts.chart('container', {
                 chart: {
                     type: 'pie'
