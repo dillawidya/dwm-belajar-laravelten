@@ -59,14 +59,14 @@
                 </p>
             </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('category') }}" class="nav-link">
                 <i class="nav-icon far fa-circle"></i>
                 <p>
                     Kategori
                 </p>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="{{ route('products.chart') }}" class="nav-link">
                     <i class="nav-icon fas fa-chart-area"></i>

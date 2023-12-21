@@ -27,6 +27,7 @@
                                         <th>Unit</th>
                                         <th>Stok</th>
                                         <th>Deskripsi</th>
+                                        <th>Foto</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
@@ -41,6 +42,7 @@
                                         <td>{{ $row->unit}}</td>
                                         <td>{{ $row->stock}}</td>
                                         <td>{{ $row->description}}</td>
+                                        <td><img src="{{ $row->image }}" class="card-img-top" alt="{{ $row->name }}" width="100px" height="100px"></td>
                                         <td>
                                             <button onclick="window.location='{{ url('products/'.$row->id) }}'" type="button" class="btn btn-sm btn-warning">
                                                 <i class="fas fa-edit"></i>

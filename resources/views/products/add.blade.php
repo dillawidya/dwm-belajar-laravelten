@@ -11,7 +11,7 @@
                             <button type="button" class="btn btn-sm btn-warning" onclick="window.location='{{ route('products.index') }}'">
                                 <i class="fas fa-arrow-left">Kembali</i>
                             </button>
-                            <form action="{{ url('products') }}" method="post">
+                            <form action="{{ url('products') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="row">
@@ -32,8 +32,8 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Kode Produk</label>
@@ -74,15 +74,25 @@
                                             @enderror
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Deskripsi</label>
-                                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Deskripsi">{{ old('description') }}</textarea>
-                                    @error('description')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+                                <div class="class row">
+                                    <div class="form-group col-md-6">
+                                        <label>Deskripsi</label>
+                                        <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Deskripsi">{{ old('description') }}</textarea>
+                                        @error('description')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Foto</label>
+                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Image" value="{{ old('image') }}">
+                                        @error('image')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                    </div>
                                 </div>
                                 <label for="" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-6">

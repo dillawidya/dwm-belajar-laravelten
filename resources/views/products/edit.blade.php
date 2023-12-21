@@ -78,14 +78,20 @@
                                             @enderror
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Deskripsi</label>
-                                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Deskripsi">{{ $description }}</textarea>
-                                    @error('description')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>Deskripsi</label>
+                                        <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Deskripsi">{{ $description }}</textarea>
+                                        @error('description')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image">Foto Produk:</label>
+                                        <input type="file" class="form-control" id="image" name="image">
+                                    </div>
                                 </div>
                                 </div>
                                 <label for="" class="col-sm-2 col-form-label"></label>

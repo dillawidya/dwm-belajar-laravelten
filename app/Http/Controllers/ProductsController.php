@@ -29,6 +29,12 @@ class ProductsController extends Controller
         $products->unit = $request->unit;
         $products->stock = $request->stock;
         $products->description = $request->description;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images'), $fileName);
+            $products->image = 'images/' . $fileName; // menyimpan path gambar ke database
+        }
         $products->save();
 
         return redirect('products')->with('msg', 'Data Berhasil Ditambahkan');
@@ -59,6 +65,12 @@ class ProductsController extends Controller
         $data->unit = $request->unit;
         $data->stock = $request->stock;
         $data->description = $request->description;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images'), $fileName);
+            $product->image = 'images/' . $fileName; // menyimpan path gambar ke database
+        }
         $data->save();
 
         return redirect('products')->with('msg', 'Data Berhasil Diubah');
